@@ -1,18 +1,23 @@
-﻿// Задача 38: Задайте массив вещественных чисел. 
-// Найдите разницу между максимальным и минимальным элементом массива.
-//3 7 22 2 78] -> 76
-double[]arr = new double[4, 7, 8, 1, 9];
-double max = 0;
-if (arr[0] > max) max = arr[0];
-if (arr[1] > max) max = arr[1];
-if (arr[2] > max) max = arr[2];
-if (arr[3] > max) max = arr[3];
-if (arr[4] > max) max = arr[4];
-
-Console.WriteLine(max);
-
-// for(double i = 0; i < array.Length; i++)
-// {
-//     max = array[i] 
-// }
-
+﻿// // Задача 38: Задайте массив вещественных чисел. 
+// // Найдите разницу между максимальным и минимальным элементом массива.
+// //3 7 22 2 78] -> 76
+double[] array = new double [4];
+//var array = new decimal[10];
+            for (int i = 0; i < array.Length; i++)
+            {
+                //Console.Write("Введите {0} число : ", i+1);
+                array[i] = new Random().Next(0, 10);
+                Console.Write($"{array[i]}, ");
+                //array[i] = Convert.ToDecimal(Console.ReadLine());
+            }
+ 
+            double max = array[0];
+            double min = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] < min) min = array[i];
+                if (array[i] > max) max = array[i];
+            }
+            
+            Console.WriteLine("Разность между максимальным и минимальным = {0}", max - min);
+        
